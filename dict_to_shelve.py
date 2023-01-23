@@ -7,7 +7,7 @@ university['schedules'] =  {
         'thursday_schedule': ['Physics', 'English Language', 'System programming', 'Running'],
         'friday_schedule': ['Math', 'Java', 'System programming', 'Chemistry']
     }
-university['tutors'] =  {
+university['tutors'] = {
         'Math': ['Jack White', 'Jim Black'],
         'Python': ['Davis Redfield', 'Joseph Wilder']
     }
@@ -16,7 +16,6 @@ print(type(x))
 print(university['schedules']['wednesday_schedule'])
 print(university['tutors']['Python'])
 university.close()
-
 # university = {
 #     'schedules': {
 #         'monday_schedule': ['Math', 'English Language', 'System programming', 'Python'],
