@@ -42,4 +42,4 @@ infinite_square_generator = get_infinite_square_generator()
 print(next(infinite_square_generator))  # 1
 print(next(infinite_square_generator))  # 4
 print(next(infinite_square_generator))  # 9
-print(next(infinite_square_generator))  # 16
+# print(next(infinite_square_generator))  # 16
