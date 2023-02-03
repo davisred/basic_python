@@ -1,28 +1,23 @@
+from functools import wraps
 import time
 
 
-def sleep(timeout, retry=3):
+def sleep(timeout):
     def the_real_decorator(function):
+        @wraps(function)
         def wrapper(*args, **kwargs):
-            retries = 0
-            while retries < retry:
-                try:
-                    value = function(*args, **kwargs)
-                    if value is None:
-                        return
-                except:
-                    print(f'Сон на {timeout} секунд')
-                    time.sleep(timeout)
-                    retries += 1
+            print(f'There was a pause {timeout} second before execution {function.__name__}')
+            time.sleep(timeout)
+            return function(*args, **kwargs)
 
         return wrapper
 
     return the_real_decorator
 
 
-@sleep(3, 2)
-def some_function(name, name_2):
-    print(f'Some {name}, {name_2}')
+@sleep(3)
+def some_function(x, y):
+    print(f'Hi, {x} {y}!')
 
 
-some_function()
+some_function('Davis', 'Redfield')
